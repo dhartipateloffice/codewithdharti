@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CodeWithDharti{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Container -->
+    <div class="nav-container">
+        <!-- Top Navigation Bar -->
+        <nav class="top-nav">
+            <div class="logo">CodeWithDharti</div>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'tutorial' %}">Tutorials</a></li>
+                <li><a href="{% url 'notes' %}">Notes</a></li>
+                <li><a href="{% url 'codegallary' %}">Code Gallery</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="#" id="theme-toggle"><i class="fa-solid fa-moon"></i></a></li>
+            </ul>
+        </nav>
+
+        <!-- Secondary Navigation Bar -->
+        <nav class="secondary-nav">
+            <ul>
+                {% for lang in languages %}
+                <li><a href="{% url 'lang-detail' lang.slug %}">{{ lang.langname }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content">
+        <div class="left-sidebar">
+            {% block left_sidebar %}{% endblock %}
+        </div>
+        <div class="right-content">
+            {% block right_content %}{% endblock %}
+            
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 CodeWithDharti. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <script>
+        const themeToggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Check if a theme is stored in localStorage and apply it
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            body.classList.add(currentTheme);
+        }
+
+        themeToggleButton.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+
+            // Save the current theme in localStorage
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                localStorage.setItem('theme', '');
+            }
+        });
+    </script>
+</body>
+</html>

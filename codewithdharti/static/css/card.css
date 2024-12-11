@@ -1,0 +1,348 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Navbar */
+.top-nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--nav-bg-color);
+    color: var(--nav-text-color);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ff6600; /* Orange hover effect */
+}
+/* Secondary Navbar */
+.secondary-nav {
+    position: sticky;
+    top: 40px;
+    background-color: var(--nav-bg-color);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondary-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondary-nav li {
+    margin: 0 10px;
+}
+
+.secondary-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.secondary-nav a:hover {
+    color: #ff6600; /* Orange hover effect */
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Content container */
+.content {
+    display: flex;
+    height: calc(100vh - 80px); /* Adjust height if needed */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+nav.top-nav {
+    background-color: var(--nav-bg-color);
+    color: var(--nav-text-color);
+}
+
+nav a {
+    color: var(--nav-text-color);
+}
+
+button#theme-toggle {
+    background-color: var(--nav-bg-color);
+    color: var(--nav-text-color);
+}
+
+button#theme-toggle:hover {
+    color: #ff6600; /* Orange hover effect */
+}
+
+.logo {
+    font-family: sans-serif; /* Choose a font that resembles the image */
+    font-weight: bold;
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #ea7c33; /* Orange color */
+    padding: 9px 14px 0px 16px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#theme-toggle {
+    font-size: 20px;
+    color: var(--theme-toggle-color);
+  }
+
+body.dark-mode #theme-toggle {
+color: var(--theme-toggle-color-dark);
+}
+
+/* Dark/Light Mode Variables */
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --nav-bg-color: #eaeaea;
+    --nav-text-color: black;
+    --code-block-bg-color: #eaeaea; 
+    --button-bg-color: #333; /* Dark background */
+    --button-text-color: white;
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: white;
+    --nav-bg-color: #333;
+    --nav-text-color: white;
+    --code-block-bg-color: #363232;
+    --button-bg-color: #f0f0f0; /* Lighter background for dark mode */
+    --button-text-color: #333
+}
+
+/* contact page design */
+.contact-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #121212; /* Dark background */
+    color: white; /* White text */
+    margin: 0 auto; /* Center horizontally */
+    width: 80%; /* Adjust width as needed */
+  }
+  
+  .contact-message {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .profile-image {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .profile-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #ddd; /* Light gray border */
+  }
+  
+  .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-media a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .social-media a:hover {
+    text-decoration: underline;
+  }
+  
+  .contact-button {
+    background-color: #333; /* Dark gray background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Add hover effect   
+   */
+  }
+  
+  .contact-button:hover {
+    background-color: #444; /* Slightly darker gray on hover */
+  }
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    .contact-container {
+        color: var(--light-text-color);
+    }
+
+    .social-media a {
+        color: var(--light-text-color);
+    }
+}
+
+/* Card Styles */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjusts number of cards per row automatically */
+    gap: 20px; /* Adds space between the cards */
+    padding: 20px;
+}
+
+.card {
+    max-width: 300px; /* Ensures consistent sizing of cards */
+    margin: 0 auto;   /* Centers the card within the grid */
+}
+.card:hover {
+    transform: scale(1.05);                 
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;             
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 15px;                            
+    text-align: center;                      
+}
+
+.card-title {
+    font-size: 1.25rem;                       
+    font-weight: bold;                        
+    margin-bottom: 10px;                      
+}
+
+.card-text {
+    font-size: 1rem;                          
+    color: #6c757d;                           
+}
+
+.btn-primary {
+    background-color: #007bff;                
+    border: none;                             
+    border-radius: 5px;                       
+    padding: 10px 20px;                      
+    transition: background-color 0.3s ease;   
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;                
+}
+
+
+.code-idea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.code-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.code-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.code-card:hover {
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.modal-image {
+    max-width: 100%;
+    height: 700px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

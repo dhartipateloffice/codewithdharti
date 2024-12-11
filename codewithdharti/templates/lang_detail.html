@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ lang.langname }} Tutorials{% endblock %}
+
+{% block left_sidebar %}
+    <ul>
+        {% for topic in topics %}
+        <li>
+            <strong>{{ topic.topic }}</strong>
+            <ul>
+                {% for subtopic in topic.subtopics.all %}
+                <li><a href="{% url 'subtopic-detail' subtopic.slug %}">{{ subtopic.subtopic }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block right_content %}
+    <h1>Welcome to {{ lang.langname }} Tutorials!</h1>
+    <p>Select a topic from the left to start learning.I'd be glad to provide you with a substantial amount of content to add to your website, ensuring that the scrollbar on the right side functions as expected.
+
+        Content for Left Sidebar (Topics and Subtopics):
+        
+        Topic 1: Introduction to Programming
+        
+        Subtopic 1: Variables and Data Types
+        Subtopic 2: Operators and Expressions
+        Subtopic 3: Control Flow (if-else, loops)
+        Subtopic 4: Functions and Modules
+        Topic 2: Python Fundamentals
+        
+        Subtopic 1: Lists, Tuples, Sets, and Dictionaries
+        Subtopic 2: String Manipulation
+        Subtopic 3: File I/O
+        Subtopic 4: Exception Handling
+        Topic 3: Object-Oriented Programming
+        
+        Subtopic 1: Classes and Objects
+        Subtopic 2: Inheritance and Polymorphism
+        Subtopic 3: Encapsulation and Abstraction
+        Subtopic 4: Design Patterns
+        Topic 4: Web Development
+        
+        Subtopic 1: HTML and CSS Basics
+        Subtopic 2: JavaScript Fundamentals
+        Subtopic 3: Python Web Frameworks (e.g., Django, Flask)
+        Subtopic 4: Database Integration (SQL, NoSQL)
+        Topic 5: Data Science and Machine Learning
+        
+        Subtopic 1: Data Analysis and Visualization
+        Subtopic 2: Statistical Concepts
+        Subtopic 3: Machine Learning Algorithms (e.g., regression, classification)
+        Subtopic 4: Deep Learning and Neural Networks
+        Topic 6: Advanced Python Topics
+        
+        Subtopic 1: Regular Expressions
+        Subtopic 2: Decorators and Generators
+        Subtopic 3: Concurrency and Parallelism
+        Subtopic 4: Advanced Python Libraries (e.g., NumPy, Pandas, Matplotlib)
+        Content for Right Sidebar (Tutorial Content):
+        
+        Introduction to Programming:
+        
+        Variables and Data Types: Explain different data types (integers, floats, strings, booleans) and how to declare and assign variables. Provide examples of variable usage.
+        Operators and Expressions: Discuss arithmetic, comparison, logical, and assignment operators. Demonstrate how to create expressions using these operators.
+        Control Flow: Explain if-else statements and loops (for, while) with examples. Show how to make decisions and repeat code blocks based on conditions.
+        Functions and Modules: Define functions and modules to organize code. Explain parameters, return values, and scope.
+        Python Fundamentals:
+        
+        Lists, Tuples, Sets, and Dictionaries: Describe the characteristics and usage of these data structures. Provide examples of creating, accessing, and modifying elements.
+        String Manipulation: Demonstrate string methods for slicing, concatenation, searching, and formatting.
+        File I/O: Explain how to read from and write to files. Discuss different file modes and error handling.
+        Exception Handling: Show how to handle errors using try-except blocks. Introduce common exceptions and best practices for error handling.
+        Object-Oriented Programming:
+        
+        Classes and Objects: Define classes with attributes and methods. Create objects from classes and interact with their properties and behaviors.
+        Inheritance and Polymorphism: Explain inheritance relationships and how to create subclasses. Demonstrate polymorphism through method overriding and abstract classes.
+        Encapsulation and Abstraction: Discuss the principles of encapsulation and abstraction. Show how to hide implementation details and provide well-defined interfaces.
+        Design Patterns: Introduce common design patterns (e.g., Singleton, Factory, Observer) and explain their benefits in software development.
+        Web Development:
+        
+        HTML and CSS Basics: Explain the structure of HTML documents and CSS stylesheets. Demonstrate how to create web pages with basic elements and styling.
+        JavaScript Fundamentals: Introduce JavaScript syntax, variables, data types, and control flow. Show how to create interactive web elements using JavaScript.
+        Python Web Frameworks: Choose a Python web framework (e.g., Django, Flask) and explain its core concepts. Demonstrate how to create web applications using the framework.
+        Database Integration: Explain SQL databases and NoSQL databases. Show how to interact with databases using Python libraries (e.g., SQLAlchemy, Django ORM).
+        Data Science and Machine Learning:
+        
+        Data Analysis and Visualization: Discuss data cleaning, preprocessing, and exploratory data analysis. Demonstrate how to visualize data using libraries like Matplotlib and Seaborn.
+        Statistical Concepts: Explain key statistical concepts (e.g., mean, median, mode, correlation) and their applications in data analysis.
+        Machine Learning Algorithms: Introduce various machine learning algorithms (e.g., linear regression, logistic regression, decision trees, random forests) and their use cases.
+        Deep Learning and Neural Networks: Explain the basics of deep learning and neural networks. Demonstrate how to build and train neural networks for tasks like image recognition and natural language processing.
+        Advanced Python Topics:
+        
+        Regular Expressions: Explain regular expressions and their use in pattern matching and text manipulation.
+        Decorators and Generators: Demonstrate the use of decorators to modify functions and generators to create iterators.
+        Concurrency and Parallelism: Discuss the concepts of concurrency and parallelism. Explore Python's tools for asynchronous programming (e.g., asyncio) and multiprocessing.
+        Advanced Python Libraries: Introduce and explain the use of advanced Python libraries like NumPy, Pandas, and Matplotlib for scientific computing, data manipulation, and visualization.
+        Remember to adapt this content to your specific target audience and learning goals. You can also add more subtopics, examples, and exercises to make the tutorials more comprehensive. By providing extensive content, you'll ensure that the scrollbar on the right side becomes necessary for users to navigate through the information.</p>
+{% endblock %}

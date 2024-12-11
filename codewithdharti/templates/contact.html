@@ -1,0 +1,28 @@
+    {% extends 'base.html' %}
+
+    {% load static %}
+
+    {% block title %}Contact Me{% endblock %}
+
+    {% block left_sidebar %}
+    <h1>Let's Connect!</h1>
+    <ul>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Projects</a></li>
+    </ul>
+    {% endblock %}
+
+    {% block right_content %}
+    <div class="contact-container">
+    <div class="profile-image">
+        <img src="{% static 'images/dhartipatell.JPEG' %}" alt="Profile Picture">
+    </div>
+    <div class="social-media">
+        <a href="https://www.instagram.com/yourinstagramhandle"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/hiteshchoudhary" target="_blank" rel="me"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/yourtwitterhandle" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+        <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i></a>
+    </div>
+    </div>
+    {% endblock %}

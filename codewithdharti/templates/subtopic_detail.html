@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ subtopic.subtopic }}{% endblock %}
+
+{% block left_sidebar %}
+<ul>
+    {% for topic in topics %}
+    <li>
+        <strong>{{ topic.topic }}</strong>
+        <ul>
+            {% for subtopic in topic.subtopics.all %}
+            <li><a href="{% url 'subtopic-detail' subtopic.slug %}">{{ subtopic.subtopic }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block right_content %}
+<h1>{{ subtopic.subtopic }}</h1>
+
+{% for nanotopic, code_sections in code_sections_by_nanotopic.items %}
+    <h3><span class="heading-text">{{ nanotopic.nanotopic }}</span></h3>
+
+    {% for code in code_sections %}
+    <div class="code-container">
+        <!-- Copy Button -->
+        <button class="copy-button" data-clipboard-text="{{ code.code_content }}">Copy Code</button>
+        
+        <!-- Code Block -->
+        <div class="code-block">
+            <pre><code class="language-python">{{ code.code_content }}</code></pre>
+        </div>
+
+        <!-- Optional Output Image -->
+        {% if code.image %}
+        <div class="output-image">
+            <img src="{{ code.image.url }}" alt="Output Image" />
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+{% endfor %}
+
+{% endblock %}
